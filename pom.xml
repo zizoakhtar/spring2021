@@ -17,7 +17,11 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-	</properties>
+	
+  <sonar.projectKey>zizoakhtar_spring2021</sonar.projectKey>
+  <sonar.organization>zizoakhtar</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 
 <dependencies>
 <!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
@@ -182,7 +186,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
-	</build>
-
+	
+ <plugin>
+<groupId>org.sonarsource.scanner.maven</groupId>
+<artifactId>sonar-maven-plugin</artifactId>
+<version>3.3.0.603</version>
+<executions>
+<execution>
+<phase>verify</phase>
+<goals>
+<goal>sonar</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+        </plugins>
+    </build>
 </project>
